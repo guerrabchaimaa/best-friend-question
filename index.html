@@ -212,7 +212,7 @@
             </p>
 
             <div class="progress-row">
-                <span id="questionCount">Question 11 of 11</span>
+                <span id="questionCount">Question 1 of 11</span>
                 <span id="progressPercent">0% completed</span>
             </div>
 
@@ -266,12 +266,12 @@
         const questions = [
 
             {
-                question: "What's my favorit material?",
+                question: "What's my favorit subject?",
                 options: [
                     "1/ math", 
                     "2/ informatic", 
                     "3/ french", 
-                    "4/ engliche"],
+                    "4/ english"],
                 correct: 1
             },
 
@@ -299,13 +299,13 @@
                 question: "What's my dream ",
                 options: [
                     "1/ be a doctor",  
-                    "2/ be programatic ",  
-                    "3/ be teacher"],
+                    "2/ be Programmer ",  
+                    "3/ be a teacher"],
                 correct: 1
             },
 
             {
-                question: "What do I enjoy doing most?",
+                question: "What do I enjoy doing the most?",
                 options: [
                     "1/ Reading 📚",
                     "2/ Gaming 🎮", 
@@ -316,11 +316,12 @@
 
             {
                 question: "What's my favorite kind of movie?",
-                options: ["1/Comedy 😆", 
-                   "1/ Horror 👻", 
+                options: [
+                   "1/Comedy 😆", 
+                   "2/ Horror 👻", 
                    "2/ Action 💥", 
                    "3/ Fantasy ✨"],
-                correct: 2
+                correct: 3
             },
 
             {
@@ -337,7 +338,7 @@
                 options: [
                     "1/ usa",
                     "2/ south korea",
-                    "3/ italie"
+                    "3/ Italy"
                 ],
                 correct: 0
             },
@@ -358,7 +359,7 @@
                 options: [
                     "1/ Funny 😂",
                     "2/ Quiet 🌙",
-                    "3/  angry😡",
+                    "3/ angry😡",
                     "3/ everything 💫"
                 ],
                 correct: 0
@@ -392,7 +393,7 @@
             const item = questions[currentQuestion];
 
             document.getElementById("questionCount").textContent =
-                `Question ${currentQuestion + 11} of ${questions.length}`;
+                `Question ${currentQuestion + 1} of ${questions.length}`;
 
             document.getElementById("progressPercent").textContent =
                 `${Math.round((currentQuestion / questions.length) * 100)}% completed`;
@@ -449,9 +450,9 @@
 
 
             if (currentQuestion < questions.length) {
-                showQuestion(11);
+                showQuestion();
             } else {
-                showResult(11); }
+                showResult(); }
             });
 
         function showResult() {
@@ -474,15 +475,23 @@
             if (percentage >= 0.8) {
 
                 title = "You Know Me So Well! 🥹";
-                message = "You're truly one of my favorite people. Thanks for knowing me so well! 💗";
+                message = "You know how i love you i love you so muche hony! 💗";
                 emoji = "🏆";
 
             } else if (percentage >= 0.5) {
 
                 title = "A Pretty Good Friend! 💕";
-                message = "You know me pretty well, but there's still more to discover about me! 🌸";
+                message = "You know me pretty , but there's still more to discover about me! 🌸";
                 emoji = "💝";
             }
+            else  if (percentage >= 0) { 
+                title = "if i see you i will kill you! 🔪";
+                message = "don't talk with me again! 💀";
+                emoji = "💔";
+
+            }
+                
+       
 
 
             document.getElementById("resultTitle").textContent = title;
